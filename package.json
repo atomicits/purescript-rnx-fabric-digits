@@ -1,0 +1,30 @@
+{
+  "name": "purescript-rnx-fabric-digits",
+  "version": "1.0.0",
+  "description": "Purescript rnx wrapper for react-native-fabric-digits",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomicits/purescript-rnx-fabric-digits.git"
+  },
+  "keywords": [
+    "purescript",
+    "rnx",
+    "fiber",
+    "digits",
+    "react-native",
+    "react"
+  ],
+  "author": "Vishnu Prasad <vishnu@atomicits.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atomicits/purescript-rnx-fabric-digits/issues"
+  },
+  "homepage": "https://github.com/atomicits/purescript-rnx-fabric-digits#readme",
+  "dependencies": {
+      "react-native-fabric-digits": "git://github.com/atomicits/react-native-fabric-digits.git"
+	}
+}
