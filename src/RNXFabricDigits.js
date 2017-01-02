@@ -7,7 +7,7 @@ exports._login = function(options){
         return function(error_callback){
             return function(){
                 rnxFabricDigits.DigitsManager.launchAuthentication(options).then(function(resData){
-                    success_callback(JSON.stringfy(resData))();
+                    success_callback(resData)();
                 }).catch(function(error){
                     error_callback(error)();
                 });
@@ -23,7 +23,11 @@ exports._getSession = function(success_callback){
                 if(error){
                     error_callback(error)();
                 }else{
-                    success_callback(JSON.stringfy(sessionDetails))();
+                    if(sessionDetails){
+                        success_callback(sessionDetails)();
+                    }else{
+                        error_callback({name: "Session Not Available", message: "session is not avaiable please login"})();
+                    }
                 }
             });
         };
@@ -31,6 +35,15 @@ exports._getSession = function(success_callback){
 };
 
 
-exports._logout = function(){
-    rnxFabricDigits.DigitsManager.logout();
+exports._logout = function(success_callback){
+    return function(error_callback){
+        return function(){
+            try{
+                var s = rnxFabricDigits.DigitsManager.logout();
+                success_callback(true)();
+            }catch(error){
+                error_callback(error)();
+            }
+        };
+    };
 };

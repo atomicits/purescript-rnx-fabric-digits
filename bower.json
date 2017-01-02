@@ -25,6 +25,7 @@
   ],
   "dependencies": {
       "purescript-rnx" : "^0.1.2-alpha",
-      "purescript-react": "^2.0.0"
+      "purescript-react": "^2.0.0",
+      "purescript-argonaut" : "^2.0.0"
   }
 }
